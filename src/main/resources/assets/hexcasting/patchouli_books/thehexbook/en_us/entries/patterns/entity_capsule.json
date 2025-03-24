@@ -1,0 +1,32 @@
+{
+  "name": "hex_machina.entry.patterns.entity_capsule",
+  "icon": "hex_machina:entity_capsule",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:patterns",
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:contain",
+      "anchor": "hex_machina:contain",
+      "input": "entity",
+      "output": "",
+      "text": "hex_machina.page.capsule.contain"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:release",
+      "anchor": "hex_machina:release",
+      "input": "vec3",
+      "output": "",
+      "text": "hex_machina.page.capsule.release"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:capsule/has_entity",
+      "anchor": "hex_machina:capsule/has_entity",
+      "input": "",
+      "output": "bool",
+      "text": "hex_machina.page.capsule.has_entity"
+    }
+  ]
+}

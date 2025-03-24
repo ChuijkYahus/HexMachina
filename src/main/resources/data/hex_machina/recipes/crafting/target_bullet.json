@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #x",
+    "#z#",
+    "y# "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "#": {
+      "item": "hexcasting:slate"
+    },
+    "y": {
+      "item": "hexcasting:focus"
+    },
+    "z": {
+      "item": "hexcasting:charged_amethyst"
+    }
+  },
+  "result": {
+    "item": "hex_machina:amethyst_bullet/target_projectile",
+    "count": 1
+  }
+}

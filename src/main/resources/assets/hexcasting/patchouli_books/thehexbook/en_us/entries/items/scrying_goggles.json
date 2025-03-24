@@ -1,0 +1,15 @@
+{
+  "name": "hex_machina.entry.items.scrying_goggles",
+  "icon": "hex_machina:scrying_goggles",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:scrying_goggles",
+      "anchor": "dust",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.scrying_goggles.spotlight"
+    }
+  ]
+}

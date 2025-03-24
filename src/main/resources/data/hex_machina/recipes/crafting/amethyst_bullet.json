@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #x",
+    "###",
+    "y# "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "#": {
+      "item": "hexcasting:slate"
+    },
+    "y": {
+      "item": "hexcasting:focus"
+    }
+  },
+  "result": {
+    "item": "hex_machina:amethyst_bullet",
+    "count": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "hex_machina",
+  "version": "${version}",
+  "name": "Hex Machina",
+  "description": "A Hex Casting addon that adds guns for spell casting!",
+  "authors": ["Haki"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/hex_machina/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.hakimen.hex_machina.client.HexMachinaClient"
+    ],
+    "main": [
+      "com.hakimen.hex_machina.HexMachina"
+    ]
+  },
+  "mixins": [
+    "hex_machina.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

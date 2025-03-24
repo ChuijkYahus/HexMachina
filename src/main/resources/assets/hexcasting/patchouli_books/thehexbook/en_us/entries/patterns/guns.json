@@ -1,0 +1,36 @@
+{
+  "name": "hex_machina.entry.patterns.gun",
+  "icon": "hex_machina:hex_gun",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:patterns",
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:current_bullet",
+      "anchor": "hex_machina:current_bullet",
+      "input": "",
+      "output": "num",
+      "text": "hex_machina.page.guns.current_bullet"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:next_bullet",
+      "anchor": "hex_machina:next_bullet",
+      "text": "hex_machina.page.guns.next_bullet"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:previous_bullet",
+      "anchor": "hex_machina:previous_bullet",
+      "text": "hex_machina.page.guns.previous_bullet"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:roulette",
+      "anchor": "hex_machina:roulette",
+      "input": "num",
+      "output": "",
+      "text": "hex_machina.page.guns.roulette"
+    }
+  ]
+}

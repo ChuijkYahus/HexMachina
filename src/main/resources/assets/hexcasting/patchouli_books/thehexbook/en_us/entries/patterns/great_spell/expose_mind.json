@@ -1,0 +1,16 @@
+{
+  "name": "hex_machina.entry.patterns.expose_mind",
+  "icon": "hex_machina:mind_phial",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:patterns/great_spells",
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hex_machina:expose_mind",
+      "anchor": "hex_machina:expose_mind",
+      "input": "entity",
+      "output": "",
+      "text": "hex_machina.page.great_spells.expose_mind"
+    }
+  ]
+}

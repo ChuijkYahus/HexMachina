@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #O",
+    "#A#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "tag": "c:glass_blocks"
+    },
+    "O": {
+      "item": "minecraft:gold_nugget"
+    },
+    "A": {
+      "item": "hexcasting:quenched_allay"
+    }
+  },
+  "result": {
+    "item": "hex_machina:mind_phial",
+    "count": 1
+  }
+}

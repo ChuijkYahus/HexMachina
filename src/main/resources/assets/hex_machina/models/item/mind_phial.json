@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hex_machina:item/mind_phial"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "hex_machina:phial": 0
+      },
+      "model": "hex_machina:item/mind_phial"
+    },
+    {
+      "predicate": {
+        "hex_machina:phial": 1
+      },
+      "model": "hex_machina:item/mind_phial_some"
+    }
+  ]
+}

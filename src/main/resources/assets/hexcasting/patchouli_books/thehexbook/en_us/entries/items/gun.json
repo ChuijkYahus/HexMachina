@@ -1,0 +1,36 @@
+{
+  "name": "hex_machina.entry.items.gun",
+  "icon": "hex_machina:hex_gun",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:hex_gun",
+      "anchor": "hex_machina:hex_gun",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.gun.spotlight"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:amethyst_bullet",
+      "anchor": "hex_machina:amethyst_bullet",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.bullet.amethyst_bullet"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:amethyst_bullet/target_projectile",
+      "anchor": "dust",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.bullet.target_bullet"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:amethyst_bullet/block_projectile",
+      "anchor": "dust",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.bullet.block_bullet"
+    }
+  ]
+}

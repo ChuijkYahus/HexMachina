@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    "-A-",
+    "###"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "-": {
+      "tag": "c:gold_ingots"
+    },
+    "A": {
+      "item": "hexcasting:amethyst_dust"
+    },
+    "#": {
+      "item": "hexcasting:slate"
+    }
+  },
+  "result": {
+    "item": "hex_machina:entity_capsule",
+    "count": 1
+  }
+}

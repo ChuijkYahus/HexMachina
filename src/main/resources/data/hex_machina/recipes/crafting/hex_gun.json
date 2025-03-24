@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "-- ",
+    "x, "
+  ],
+  "key": {
+    "x": {
+      "item": "hexcasting:edified_planks"
+    },
+    "#": {
+      "tag": "c:iron_ingots"
+    },
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "-": {
+      "tag": "c:gold_ingots"
+    },
+    ",": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "hex_machina:hex_gun",
+    "count": 1
+  }
+}

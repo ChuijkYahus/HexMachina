@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "x#x"
+  ],
+  "key": {
+    "x": {
+      "item": "hexcasting:lens"
+    },
+    "#": {
+      "tag": "c:gold_ingots"
+    },
+    "A": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "hex_machina:scrying_goggles",
+    "count": 1
+  }
+}

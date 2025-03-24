@@ -1,0 +1,15 @@
+{
+  "name": "hex_machina.entry.items.entity_capsule",
+  "icon": "hex_machina:entity_capsule",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:entity_capsule",
+      "anchor": "hex_machina:entity_capsule",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.entity_capsule.spotlight"
+    }
+  ]
+}

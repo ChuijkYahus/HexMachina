@@ -1,0 +1,19 @@
+{
+  "name": "hex_machina.entry.items.mind_phial",
+  "icon": "hex_machina:mind_phial",
+  "advancement": "hexcasting:root",
+  "category": "hexcasting:items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hex_machina:mind_phial",
+      "anchor": "hex_machina:mind_phial",
+      "link_recipe": true,
+      "text": "hex_machina.page.items.mind_phial.spotlight"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hex_machina.page.items.mind_phial.page_2"
+    }
+  ]
+}
