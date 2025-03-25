@@ -13,11 +13,13 @@
   "effect.hex_machina.expose_mind": "Expose Mind",
 
   "mishap.hex_machina.not_gun": "Can't cast this pattern outside of a gun",
+  "mishap.hex_machina.entity_capsule.expect_empty": "Empty %s",
 
   "hexcasting.action.hex_machina:current_bullet": "Gunslinger's Reflection",
   "hexcasting.action.hex_machina:previous_bullet": "Gunslinger's Regression",
   "hexcasting.action.hex_machina:next_bullet": "Gunslinger's Progression",
   "hexcasting.action.hex_machina:roulette": "Gunslinger's Roulette",
+  "hexcasting.action.hex_machina:get_bullet": "Colt's Reflection",
 
   "hexcasting.action.hex_machina:contain": "Encapsulate",
   "hexcasting.action.hex_machina:release": "Deploy",
@@ -35,6 +37,7 @@
   "hex_machina.page.guns.previous_bullet": "Cycles to the previous bullet in the gun",
   "hex_machina.page.guns.next_bullet": "Cycles to the next bullet in the gun",
   "hex_machina.page.guns.roulette": "Cycles §on§r slots in the gun",
+  "hex_machina.page.guns.get_bullet": "Gets a reference to the bullet casting this hex",
 
   "hex_machina.page.capsule.contain": "Reads a entity from the stack and stores that entity in a entity capsule, costs 1 $(l:items/amethyst)$(item)Amethyst Dust./$ per health point of the target entity",
   "hex_machina.page.capsule.release": "Reads a position from the stack and releases the entity from the entity capsule at that position, costs 1 $(l:items/amethyst)$(item)Amethyst Shard./$",

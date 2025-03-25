@@ -76,6 +76,8 @@ public class BulletProjectileEnv extends PlayerBasedCastEnv {
         return super.isVecInRangeEnvironment(vec) || bulletProjectile.getPosition(0).distanceTo(vec) <= 8;
     }
 
+
+
     @Override
     public FrozenPigment getPigment() {
         var casterStack = this.caster.getItemInHand(this.castingHand);

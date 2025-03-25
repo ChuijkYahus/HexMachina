@@ -41,7 +41,7 @@ public class BulletRenderer extends EntityRenderer<BulletProjectile> {
             for (int j = 0; j < 16; j++) {
                 Minecraft.getInstance().level.addAlwaysVisibleParticle(
                         new ConjureParticleOptions(pigment.getColorProvider().getColor((Minecraft.getInstance().level.getGameTime() * 5 + g), pos)), true,
-                        pos.x + player.getRandom().triangle(-0.4,0.4) + 0.1, pos.y + player.getRandom().triangle(-0.4,0.4) + 0.25, pos.z + player.getRandom().triangle(-0.4,0.4) + 0.1,
+                        pos.x + player.getRandom().triangle(-0.4,0.4) + 0.5, pos.y + player.getRandom().triangle(-0.4,0.4) + 0.25, pos.z + player.getRandom().triangle(-0.4,0.4) + 0.5,
                         0,0,0
                 );
             }

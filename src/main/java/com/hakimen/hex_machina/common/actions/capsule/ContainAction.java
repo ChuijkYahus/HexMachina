@@ -46,15 +46,19 @@ public class ContainAction implements SpellAction {
             ExceptionUtils.throwException(new MishapBadEntity(toContain, Component.literal("Any entity excluding Player, Wither and Ender Dragon")));
         }
 
-        CastingEnvironment.HeldItemInfo info = castingEnvironment.getHeldItemToOperateOn(stack -> stack.getItem() instanceof HexEntityHolder && !HexEntityHolder.hasEntity(stack));
+        CastingEnvironment.HeldItemInfo info = castingEnvironment.getHeldItemToOperateOn(stack -> stack.getItem() instanceof HexEntityHolder);
 
 
         float health = toContain.getMaxHealth();
 
         if (info != null) {
             ItemStack stack = info.stack();
-            HexEntityHolder.writeEntityToNBT(stack.getOrCreateTag(), toContain);
-            toContain.remove(Entity.RemovalReason.DISCARDED);
+            if(!HexEntityHolder.hasEntity(stack)){
+                HexEntityHolder.writeEntityToNBT(stack.getOrCreateTag(), toContain);
+                toContain.remove(Entity.RemovalReason.DISCARDED);
+            }else{
+                ExceptionUtils.throwException(new MishapBadOffhandItem(ItemStack.EMPTY, Component.translatable("mishap.hex_machina.entity_capsule.expect_empty", ItemRegister.ENTITY_CAPSULE.get().getDefaultInstance().getHoverName())));
+            }
         } else {
             ExceptionUtils.throwException(new MishapBadOffhandItem(ItemStack.EMPTY, ItemRegister.ENTITY_CAPSULE.get().getDefaultInstance().getHoverName()));
         }

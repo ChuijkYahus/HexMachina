@@ -18,7 +18,7 @@ public class GetArmPoseMixin {
     private static void getArmPose(AbstractClientPlayer abstractClientPlayer, InteractionHand interactionHand, CallbackInfoReturnable<HumanoidModel.ArmPose> cir) {
         ItemStack itemStack = abstractClientPlayer.getItemInHand(interactionHand);
 
-        if(itemStack.is(ItemRegister.HEX_GUN.get())){
+        if(itemStack.is(ItemRegister.HEX_GUN.get()) && !abstractClientPlayer.swinging){
             cir.setReturnValue(HumanoidModel.ArmPose.CROSSBOW_HOLD);
         }
     }

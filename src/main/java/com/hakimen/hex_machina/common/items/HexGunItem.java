@@ -119,10 +119,10 @@ public class HexGunItem extends Item implements IotaHolderItem {
                     }
                 }
                 player.getCooldowns().addCooldown(this, before == stack.getOrCreateTag().getInt(BULLET_INDEX_COUNTER) ? SHOT_DELAY : (stack.getOrCreateTag().getInt(BULLET_INDEX_COUNTER) == 0 ? (RELOAD_COOLDOWN * slots.size()) : SHOT_DELAY));
-                return InteractionResultHolder.success(stack);
+                return InteractionResultHolder.fail(stack);
             }
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResultHolder.fail(stack);
     }
 
     @Override

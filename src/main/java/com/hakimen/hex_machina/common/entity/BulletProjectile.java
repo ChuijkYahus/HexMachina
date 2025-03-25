@@ -13,6 +13,7 @@ import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import com.hakimen.hex_machina.common.hex.BulletProjectileEnv;
 import com.hakimen.hex_machina.common.items.HexGunItem;
 import com.hakimen.hex_machina.common.registry.EntityRegister;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -122,7 +123,6 @@ public class BulletProjectile extends ThrowableProjectile {
                     new PatternIota(SpecialPatterns.CONSIDERATION),
                     new EntityIota(entityHitResult.getEntity())
             ));
-            discard();
         }
 
     }
@@ -136,7 +136,12 @@ public class BulletProjectile extends ThrowableProjectile {
                     new Vec3Iota(blockHitResult.getBlockPos().getCenter())
             ));
         }
-        discard();
+        if(!isBlockCast){
+            castIota(List.of(
+                    new PatternIota(SpecialPatterns.CONSIDERATION),
+                    new NullIota()
+            ));
+        }
     }
 
     @Override
@@ -158,7 +163,7 @@ public class BulletProjectile extends ThrowableProjectile {
     @Override
     public void tick() {
         super.tick();
-
+        this.lookAt(EntityAnchorArgument.Anchor.EYES, this.getPosition(0).add(this.getDeltaMovement().scale(4)));
     }
 
     public void castIota(List<Iota> extension) {
@@ -179,6 +184,7 @@ public class BulletProjectile extends ThrowableProjectile {
             Iota iota = extension.get(i);
             holder.add(i, iota);
         }
+        discard();
 
         var sPlayer = (ServerPlayer) caster;
         var ctx = new BulletProjectileEnv(sPlayer, caster.getItemInHand(InteractionHand.MAIN_HAND) == gun ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND, this, gun, gun.getOrCreateTag().getInt(HexGunItem.BULLET_SLOT));

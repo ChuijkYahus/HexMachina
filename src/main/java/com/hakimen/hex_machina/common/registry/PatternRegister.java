@@ -11,6 +11,7 @@ import com.hakimen.hex_machina.common.actions.ExposeMindAction;
 import com.hakimen.hex_machina.common.actions.capsule.ContainAction;
 import com.hakimen.hex_machina.common.actions.capsule.HasEntityAction;
 import com.hakimen.hex_machina.common.actions.capsule.ReleaseAction;
+import com.hakimen.hex_machina.common.actions.gun.BulletReflectionAction;
 import com.hakimen.hex_machina.common.actions.gun.CurrentBulletAction;
 import com.hakimen.hex_machina.common.actions.gun.CycleBulletAction;
 import com.hakimen.hex_machina.common.actions.gun.CycleBulletWithArgsAction;
@@ -42,6 +43,11 @@ public class PatternRegister implements IRegistry {
     public static final Supplier<ActionRegistryEntry> ROULETTE = PATTERNS.register("roulette", () -> new ActionRegistryEntry(
             HexPattern.fromAngles("qqqeaqaa",HexDir.WEST),
             CycleBulletWithArgsAction.INSTANCE
+    ));
+
+    public static final Supplier<ActionRegistryEntry> GET_BULLET = PATTERNS.register("get_bullet", () -> new ActionRegistryEntry(
+            HexPattern.fromAngles("qaqqqeqaww",HexDir.NORTH_WEST),
+            BulletReflectionAction.INSTANCE
     ));
 
     public static final Supplier<ActionRegistryEntry> CONTAIN = PATTERNS.register("contain", () -> new ActionRegistryEntry(

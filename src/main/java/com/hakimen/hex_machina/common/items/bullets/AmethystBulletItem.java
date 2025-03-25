@@ -4,6 +4,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
 import at.petrak.hexcasting.api.item.IotaHolderItem;
 import at.petrak.hexcasting.api.utils.NBTHelper;
+import at.petrak.hexcasting.common.lib.hex.HexIotaTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
@@ -64,7 +65,7 @@ public class AmethystBulletItem extends Item implements IotaHolderItem {
 
     @Override
     public boolean canWrite(ItemStack stack, @Nullable Iota iota) {
-        return iota != null && writeable(stack);
+        return iota != null && iota.getType() == HexIotaTypes.LIST && writeable(stack);
     }
 
     @Override

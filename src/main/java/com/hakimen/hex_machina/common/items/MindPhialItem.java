@@ -59,7 +59,7 @@ public class MindPhialItem extends ItemMediaHolder {
 
     public void addMindMedia(float health, ItemStack stack){
         long oldMedia = getMedia(stack);
-        double math = (Math.sqrt(oldMedia + health * MediaConstants.DUST_UNIT)/(health*MediaConstants.DUST_UNIT));
+        double math = (Math.log10((oldMedia == 0 ? health : oldMedia) + health * MediaConstants.DUST_UNIT)/(health*MediaConstants.DUST_UNIT));
         this.setMedia(stack, oldMedia + (long)((1.25 - math) * health * MediaConstants.DUST_UNIT));
     }
 }
