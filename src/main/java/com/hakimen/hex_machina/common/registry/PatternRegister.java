@@ -3,27 +3,28 @@ package com.hakimen.hex_machina.common.registry;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
-import at.petrak.hexcasting.api.misc.MediaConstants;
-import at.petrak.hexcasting.common.casting.actions.spells.OpPotionEffect;
 import at.petrak.hexcasting.common.lib.hex.HexActions;
 import com.hakimen.hex_machina.HexMachina;
 import com.hakimen.hex_machina.common.actions.ExposeMindAction;
 import com.hakimen.hex_machina.common.actions.capsule.ContainAction;
 import com.hakimen.hex_machina.common.actions.capsule.HasEntityAction;
 import com.hakimen.hex_machina.common.actions.capsule.ReleaseAction;
+import com.hakimen.hex_machina.common.actions.golem.GolemMoveAction;
+import com.hakimen.hex_machina.common.actions.golem.GolemIsInRangeOfTarget;
 import com.hakimen.hex_machina.common.actions.gun.BulletReflectionAction;
 import com.hakimen.hex_machina.common.actions.gun.CurrentBulletAction;
 import com.hakimen.hex_machina.common.actions.gun.CycleBulletAction;
 import com.hakimen.hex_machina.common.actions.gun.CycleBulletWithArgsAction;
 import com.hakimen.hex_machina.common.utils.registration.IRegistry;
 import com.hakimen.hex_machina.common.utils.registration.Recorder;
-import net.minecraft.world.effect.MobEffects;
 
 import java.util.function.Supplier;
 
 public class PatternRegister implements IRegistry {
     public static final PatternRegister PATTERN_REGISTER = new PatternRegister();
     public static final Recorder<ActionRegistryEntry> PATTERNS = new Recorder<>(HexActions.REGISTRY, HexMachina.MODID);
+
+    //Gun
 
     public static final Supplier<ActionRegistryEntry> CURRENT_BULLET = PATTERNS.register("current_bullet", () -> new ActionRegistryEntry(
             HexPattern.fromAngles("awqqqwaqweaqaaw",HexDir.SOUTH_WEST),
@@ -50,6 +51,8 @@ public class PatternRegister implements IRegistry {
             BulletReflectionAction.INSTANCE
     ));
 
+    // Entity Capsule
+
     public static final Supplier<ActionRegistryEntry> CONTAIN = PATTERNS.register("contain", () -> new ActionRegistryEntry(
             HexPattern.fromAngles("qqqqqeawa",HexDir.WEST),
             ContainAction.INSTANCE
@@ -66,11 +69,22 @@ public class PatternRegister implements IRegistry {
     ));
 
 
+    // Great Spells
     public static final Supplier<ActionRegistryEntry> EXPOSE_MIND = PATTERNS.register("expose_mind", () -> new ActionRegistryEntry(
             HexPattern.fromAngles("qwqwqwqwqeqqqaedwqqqqqw",HexDir.WEST),
             ExposeMindAction.INSTANCE
     ));
 
+
+    // Golem
+    public static final Supplier<ActionRegistryEntry> MOVE_GOLEM = PATTERNS.register("move_golem", () -> new ActionRegistryEntry(
+            HexPattern.fromAngles("qweqweqweqweqweqweqweqweqweqwe",HexDir.WEST),
+            GolemMoveAction.INSTANCE
+    ));
+    public static final Supplier<ActionRegistryEntry> IS_GOLEM_IN_RANGE_OF_TARGET = PATTERNS.register("wait_for_move_and_run", () -> new ActionRegistryEntry(
+            HexPattern.fromAngles("ewqewqewqewqewq",HexDir.WEST),
+            GolemIsInRangeOfTarget.INSTANCE
+    ));
 
     @Override
     public void register() {

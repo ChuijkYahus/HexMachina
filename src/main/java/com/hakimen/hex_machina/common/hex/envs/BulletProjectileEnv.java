@@ -1,4 +1,4 @@
-package com.hakimen.hex_machina.common.hex;
+package com.hakimen.hex_machina.common.hex.envs;
 
 import at.petrak.hexcasting.api.casting.eval.CastResult;
 import at.petrak.hexcasting.api.casting.eval.env.PlayerBasedCastEnv;
@@ -9,7 +9,6 @@ import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import com.hakimen.hex_machina.common.entity.BulletProjectile;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 

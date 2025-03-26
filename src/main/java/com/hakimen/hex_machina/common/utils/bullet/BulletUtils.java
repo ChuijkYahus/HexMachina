@@ -7,7 +7,7 @@ import at.petrak.hexcasting.api.casting.iota.PatternIota;
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds;
 import at.petrak.hexcasting.common.msgs.MsgNewSpiralPatternsS2C;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
-import com.hakimen.hex_machina.common.hex.GunEnv;
+import com.hakimen.hex_machina.common.hex.envs.GunEnv;
 import com.hakimen.hex_machina.common.items.bullets.AmethystBulletItem;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

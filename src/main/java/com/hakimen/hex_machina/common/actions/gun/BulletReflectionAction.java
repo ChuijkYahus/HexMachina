@@ -5,19 +5,12 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.eval.OperationResult;
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage;
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation;
-import at.petrak.hexcasting.api.casting.iota.DoubleIota;
 import at.petrak.hexcasting.api.casting.iota.EntityIota;
 import at.petrak.hexcasting.api.casting.iota.Iota;
-import com.hakimen.hex_machina.common.hex.BulletProjectileEnv;
+import com.hakimen.hex_machina.common.hex.envs.BulletProjectileEnv;
 import com.hakimen.hex_machina.common.hex.mishaps.MishapNotBullet;
-import com.hakimen.hex_machina.common.hex.mishaps.MishapNotGun;
-import com.hakimen.hex_machina.common.items.HexGunItem;
 import com.hakimen.hex_machina.common.utils.exceptions.ExceptionUtils;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.hakimen.hex_machina.common.hex;
+package com.hakimen.hex_machina.common.hex.envs;
 
 import at.petrak.hexcasting.api.casting.eval.CastResult;
 import at.petrak.hexcasting.api.casting.eval.env.PlayerBasedCastEnv;
