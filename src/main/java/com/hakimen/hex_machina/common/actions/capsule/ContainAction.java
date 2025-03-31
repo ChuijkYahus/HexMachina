@@ -12,6 +12,8 @@ import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity;
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadOffhandItem;
 import at.petrak.hexcasting.api.misc.MediaConstants;
+import at.petrak.hexcasting.fabric.cc.HexCardinalComponents;
+import com.hakimen.hex_machina.common.hex.mishaps.MishapEntityIsBrainswept;
 import com.hakimen.hex_machina.common.items.HexEntityHolder;
 import com.hakimen.hex_machina.common.registry.ItemRegister;
 import com.hakimen.hex_machina.common.utils.exceptions.ExceptionUtils;
@@ -44,6 +46,11 @@ public class ContainAction implements SpellAction {
 
         if(!HexEntityHolder.canCapture(toContain)){
             ExceptionUtils.throwException(new MishapBadEntity(toContain, Component.literal("Any entity excluding Player, Wither and Ender Dragon")));
+        }
+
+        //It pains me to do this.
+        if(HexCardinalComponents.BRAINSWEPT.get(toContain).isBrainswept()){
+            ExceptionUtils.throwException(new MishapEntityIsBrainswept());
         }
 
         CastingEnvironment.HeldItemInfo info = castingEnvironment.getHeldItemToOperateOn(stack -> stack.getItem() instanceof HexEntityHolder);

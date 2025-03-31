@@ -170,6 +170,8 @@ public class BulletProjectile extends ThrowableProjectile {
 
         ServerLevel serverLevel = (ServerLevel) level();
 
+        if(player == null) return;
+
         Player caster = serverLevel.getPlayerByUUID(player);
 
         if(caster == null) return;

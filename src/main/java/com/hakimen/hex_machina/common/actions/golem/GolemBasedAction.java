@@ -9,6 +9,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.mishaps.Mishap;
 import at.petrak.hexcasting.api.pigment.FrozenPigment;
 import com.hakimen.hex_machina.common.hex.envs.GolemCastingEnviorment;
+import com.hakimen.hex_machina.common.hex.mishaps.MishapNotGolem;
 import com.hakimen.hex_machina.common.utils.exceptions.ExceptionUtils;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
@@ -25,24 +26,7 @@ public abstract class GolemBasedAction implements ConstMediaAction {
         if(castingEnvironment instanceof GolemCastingEnviorment golemCastingEnviorment){
             return this.execInEnvironment(list, golemCastingEnviorment);
         }else{
-            ExceptionUtils.throwException(new Mishap() {
-                @NotNull
-                @Override
-                public FrozenPigment accentColor(@NotNull CastingEnvironment castingEnvironment, @NotNull Mishap.Context context) {
-                    return null;
-                }
-
-                @Override
-                public void execute(@NotNull CastingEnvironment castingEnvironment, @NotNull Mishap.Context context, @NotNull List<Iota> list) {
-
-                }
-
-                @Nullable
-                @Override
-                protected Component errorMessage(@NotNull CastingEnvironment castingEnvironment, @NotNull Mishap.Context context) {
-                    return Component.translatable("Not a golem!");
-                }
-            });
+            ExceptionUtils.throwException(new MishapNotGolem());
         }
 
         return List.of();

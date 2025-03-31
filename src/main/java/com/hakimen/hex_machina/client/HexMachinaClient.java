@@ -23,7 +23,7 @@ public class HexMachinaClient implements ClientModInitializer {
         MenuScreens.register(ContainerRegister.GUN_MENU.get(), GunScreen::new);
 
         EntityRendererRegistry.register(EntityRegister.BULLET_PROJECTILE.get(), BulletRenderer::new);
-        EntityRendererRegistry.register(EntityRegister.HEX_GOLEM.get(), HexGolemRenderer::new);
+        //EntityRendererRegistry.register(EntityRegister.HEX_GOLEM.get(), HexGolemRenderer::new);
 
         ItemProperties.register(ItemRegister.MIND_PHIAL.get(), new ResourceLocation(HexMachina.MODID,"phial"), (itemStack, clientLevel, livingEntity, i) -> {
             if(itemStack.getItem() instanceof MindPhialItem item){

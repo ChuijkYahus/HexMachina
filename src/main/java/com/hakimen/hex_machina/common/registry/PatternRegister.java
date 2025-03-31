@@ -9,8 +9,8 @@ import com.hakimen.hex_machina.common.actions.ExposeMindAction;
 import com.hakimen.hex_machina.common.actions.capsule.ContainAction;
 import com.hakimen.hex_machina.common.actions.capsule.HasEntityAction;
 import com.hakimen.hex_machina.common.actions.capsule.ReleaseAction;
-import com.hakimen.hex_machina.common.actions.golem.GolemMoveAction;
-import com.hakimen.hex_machina.common.actions.golem.GolemIsInRangeOfTarget;
+import com.hakimen.hex_machina.common.actions.golem.GolemLookAtAction;
+import com.hakimen.hex_machina.common.actions.golem.GolemPushNodeAction;
 import com.hakimen.hex_machina.common.actions.gun.BulletReflectionAction;
 import com.hakimen.hex_machina.common.actions.gun.CurrentBulletAction;
 import com.hakimen.hex_machina.common.actions.gun.CycleBulletAction;
@@ -77,14 +77,11 @@ public class PatternRegister implements IRegistry {
 
 
     // Golem
-    public static final Supplier<ActionRegistryEntry> MOVE_GOLEM = PATTERNS.register("move_golem", () -> new ActionRegistryEntry(
-            HexPattern.fromAngles("qweqweqweqweqweqweqweqweqweqwe",HexDir.WEST),
-            GolemMoveAction.INSTANCE
-    ));
-    public static final Supplier<ActionRegistryEntry> IS_GOLEM_IN_RANGE_OF_TARGET = PATTERNS.register("wait_for_move_and_run", () -> new ActionRegistryEntry(
-            HexPattern.fromAngles("ewqewqewqewqewq",HexDir.WEST),
-            GolemIsInRangeOfTarget.INSTANCE
-    ));
+//    public static final Supplier<ActionRegistryEntry> GOLEM$PUSH_NODE = PATTERNS.register("push_node", () -> new ActionRegistryEntry(
+//            HexPattern.fromAngles("deeeeeqdaqqqa",HexDir.EAST),
+//            GolemPushNodeAction.INSTANCE
+//    ));
+    //TODO: This is WIP stuff so commenting out for now :p
 
     @Override
     public void register() {

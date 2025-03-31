@@ -2,17 +2,16 @@ package com.hakimen.hex_machina.common.actions.golem;
 
 import at.petrak.hexcasting.api.casting.OperatorUtils;
 import at.petrak.hexcasting.api.casting.iota.Iota;
-import com.hakimen.hex_machina.common.entity.golem.HexGolem;
 import com.hakimen.hex_machina.common.hex.envs.GolemCastingEnviorment;
-import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GolemMoveAction extends GolemBasedAction{
+public class GolemLookAtAction extends GolemBasedAction{
 
-    public static final GolemMoveAction INSTANCE = new GolemMoveAction();
+    public static final GolemLookAtAction INSTANCE = new GolemLookAtAction();
 
     @Override
     public long getMediaCost() {
@@ -29,8 +28,7 @@ public class GolemMoveAction extends GolemBasedAction{
 
         Vec3 pos = OperatorUtils.getVec3(list,0,getArgc());
 
-        castingEnvironment.getGolem().getNavigation().moveTo(pos.x,pos.y,pos.z, 1);
-        castingEnvironment.getGoal().setTargetPos(pos);
+        castingEnvironment.getGolem().lookAt(EntityAnchorArgument.Anchor.EYES, pos);
 
         return List.of();
     }

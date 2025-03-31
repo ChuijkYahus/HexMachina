@@ -2,6 +2,7 @@ package com.hakimen.hex_machina.common.items;
 
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.item.IotaHolderItem;
+import at.petrak.hexcasting.common.lib.HexSounds;
 import com.hakimen.hex_machina.common.container.NonEmptyContainer;
 import com.hakimen.hex_machina.common.handlers.BulletHandler;
 import com.hakimen.hex_machina.common.items.bullets.AmethystBulletItem;
@@ -12,6 +13,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.MenuProvider;
@@ -113,11 +115,12 @@ public class HexGunItem extends Item implements IotaHolderItem {
                 IBulletHandler handler = BulletHandler.HANDLERS.getOrDefault(itemHex, () -> null).get();
 
                 if(handler != null){
-                    var result = handler.handleBullet(stack, containerStack, player, level, interactionHand);;
+                    var result = handler.handleBullet(stack, containerStack, player, level, interactionHand);
                     if(result != null){
                         return result;
                     }
                 }
+                level.playSound(player, player.getOnPos(), HexSounds.CAST_SPELL, SoundSource.PLAYERS, 1f,1f);
                 player.getCooldowns().addCooldown(this, before == stack.getOrCreateTag().getInt(BULLET_INDEX_COUNTER) ? SHOT_DELAY : (stack.getOrCreateTag().getInt(BULLET_INDEX_COUNTER) == 0 ? (RELOAD_COOLDOWN * slots.size()) : SHOT_DELAY));
                 return InteractionResultHolder.fail(stack);
             }

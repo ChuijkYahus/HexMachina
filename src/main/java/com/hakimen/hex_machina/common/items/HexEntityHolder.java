@@ -1,8 +1,13 @@
 package com.hakimen.hex_machina.common.items;
 
+import at.petrak.hexcasting.fabric.cc.HexCardinalComponents;
+import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
+import dev.onyxstudios.cca.internal.entity.CardinalComponentsEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -17,11 +22,13 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Optional;
 
 public class HexEntityHolder extends Item {
 
     public static final String TAG_ENTITY = "Entity";
     public static final String TAG_ENTITY_TYPE = "Type";
+    public static final String TAG_CC_DATA = "CC";
 
     public HexEntityHolder() {
         super(new Properties().stacksTo(1));
@@ -39,7 +46,7 @@ public class HexEntityHolder extends Item {
     public static void writeEntityToNBT(CompoundTag tag, LivingEntity entity) {
         if (canCapture(entity)) {
             CompoundTag entityTag = new CompoundTag();
-            entity.addAdditionalSaveData(entityTag);
+            entity.save(entityTag);
             tag.put(TAG_ENTITY, entityTag);
             tag.putString(TAG_ENTITY_TYPE, BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
         }
@@ -52,7 +59,8 @@ public class HexEntityHolder extends Item {
     public static LivingEntity readEntityFromNBT(Level level, CompoundTag tag) {
         Entity entity = BuiltInRegistries.ENTITY_TYPE.get(new ResourceLocation(tag.getString(TAG_ENTITY_TYPE))).create(level);
         if(entity instanceof LivingEntity livingEntity){
-            livingEntity.readAdditionalSaveData(tag.getCompound(TAG_ENTITY));
+            livingEntity.load(tag.getCompound(TAG_ENTITY));
+
             tag.remove(TAG_ENTITY);
             tag.remove(TAG_ENTITY_TYPE);
             return livingEntity;

@@ -38,6 +38,7 @@ public class GolemCastingEnviorment extends CastingEnvironment {
     @Override
     public MishapEnvironment getMishapEnvironment() {
         return new MishapEnvironment(world, null) {
+
             @Override
             public void yeetHeldItemsTowards(Vec3 targetPos) {
                 System.out.println("yeet");

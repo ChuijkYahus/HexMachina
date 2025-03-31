@@ -15,6 +15,9 @@
     ],
     "main": [
       "com.hakimen.hex_machina.HexMachina"
+    ],
+    "cardinal-components": [
+      "com.hakimen.hex_machina.common.card_components.HexMachinaCardinalComponents"
     ]
   },
   "mixins": [
